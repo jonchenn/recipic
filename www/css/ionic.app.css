@@ -9104,3 +9104,7 @@ a.button {
 
 .page-new-recipe .content {
   height: 80px; }
+
+.page-feed .content {
+  color: #555;
+  padding: 15px 5px; }

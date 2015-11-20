@@ -27,6 +27,44 @@ angular.module('app.controllers', [])
 // Recipe feed page controller
 .controller('recipeFeedCtrl', function($scope) {
 
+  var ITEMS_PER_PAGE = 3;
+
+  $scope.offset = 0;
+  $scope.recipes = [];
+
+  $scope.refresh = function() {
+    $scope.offset = 0;
+    $scope.recipes = [];
+    $scope.loadMore();
+  };
+
+  $scope.loadMore = function() {
+    var query = new Parse.Query('Recipe');
+    query.descending('createdAt');
+
+    // offset
+    query.limit(ITEMS_PER_PAGE);
+    query.skip($scope.offset);
+
+    query.find().then(function(models) {
+      $scope.offset += ITEMS_PER_PAGE;
+
+      for (var i=0, length=models.length; i<length; i++) {
+        $scope.recipes.push({
+          title: models[i].get('title'),
+          content: models[i].get('content'),
+        });
+      }
+      $scope.$broadcast('scroll.refreshComplete');
+      $scope.$broadcast('scroll.infiniteScrollComplete');
+
+    }).fail(function(err) {
+      alert(err);
+    });
+  };
+
+  $scope.loadMore();
+
 })
 
 // Create new recipe controller
