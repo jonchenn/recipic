@@ -9101,3 +9101,6 @@ a.button {
 
 .profile-pic {
   width: 100%; }
+
+.page-new-recipe .content {
+  height: 80px; }
