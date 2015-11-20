@@ -1,21 +1,23 @@
 <ion-view title="Login">
-  <ion-content padding="'true'" style="background: url(img/rBmXOmSeQPiIJisZjxX2_MainCuttingStyles.jpg) no-repeat center;" class="has-header">
-    <div class="spacer" style="width: 300px; height: 48px;"></div>
-    <h1>recipic</h1>
+  <ion-content padding="'true'" style="background: url(img/rBmXOmSeQPiIJisZjxX2_MainCuttingStyles.jpg) no-repeat;" class="has-header">
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <h1 class="brand">recipic</h1>
     <form class="list">
-      <div class="spacer" style="width: 300px; height: 45px;"></div>
+      <div class="spacer" style="width: 300px; height: 25px;"></div>
       <ion-list>
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" ng-model="username">
         </label>
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" ng-model="password">
         </label>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
-      <button class="button button-positive button-block ">Log in</button>
+      <button class="button button-positive button-block " ng-click="login(username, password)">Log in</button>
+
+      <div class="result">{{result}}</div>
       <a menu-close="" class="button button-light button-clear button-block ">Or create an account</a>
     </form>
   </ion-content>

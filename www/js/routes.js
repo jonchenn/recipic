@@ -8,7 +8,7 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
     .state('menu', {
-      url: '/side-menu21',
+      url: '/side-menu',
       abstract:true,
       templateUrl: 'templates/menu.html'
     })
@@ -28,7 +28,7 @@ angular.module('app.routes', [])
     .state('menu.recipeFeed', {
       url: '/feed',
       views: {
-        'side-menu21': {
+        'side-menu': {
           templateUrl: 'templates/recipeFeed.html',
           controller: 'recipeFeedCtrl'
         }
@@ -38,7 +38,7 @@ angular.module('app.routes', [])
     .state('menu.createNewRecipe', {
       url: '/new',
       views: {
-        'side-menu21': {
+        'side-menu': {
           templateUrl: 'templates/createNewRecipe.html',
           controller: 'createNewRecipeCtrl'
         }
@@ -48,7 +48,7 @@ angular.module('app.routes', [])
     .state('menu.profile', {
       url: '/profile',
       views: {
-        'side-menu21': {
+        'side-menu': {
           templateUrl: 'templates/profile.html',
           controller: 'profileCtrl'
         }

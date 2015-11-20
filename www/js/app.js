@@ -5,7 +5,15 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
+angular.module('app', [
+  'ionic',
+  'parse-angular',
+  'parse-angular.enhance',
+  'app.controllers',
+  'app.routes',
+  'app.services',
+  'app.directives',
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -18,5 +26,14 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    // Initialize Parse
+    Parse.initialize(
+      "ReYi6pSGB8FiAahrk9D26RqkxOi0Hm0k3gCCcyqq" /* App ID */ ,
+      "GpdqMKNUnaNzU9GUQcdd1BASqmnGtIG66y2VQZr9" /* JS key */
+    );
+    // Migrating to new session tokens, see https://parse.com/tutorials/session-migration-tutorial.
+    Parse.User.enableRevocableSession();
+
   });
 })

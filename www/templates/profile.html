@@ -1,18 +1,19 @@
 <ion-view title="Profile">
-    <ion-content padding="'true'" class="has-header">
-        <h1>Name</h1>
-        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
-        <div>
-            <p>Some friendly
-                <strong>markdown</strong>
-            </p>
-        </div>
-        <ion-list>
-            <ion-item menu-close="">Item 1</ion-item>
-            <ion-item menu-close="">Item 2</ion-item>
-            <ion-item menu-close="">Item 3</ion-item>
-        </ion-list>
-    </ion-content>
+  <ion-content padding="'true'" class="has-header">
+    <h3>{{name}}</h3>
+    <h5>{{username}}</h5>
+    <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
+      <img class="profile-pic" ng-src="{{img}}" />
+    </div>
+    <div>
+      <p>Some friendly
+        <strong>markdown</strong>
+      </p>
+    </div>
+    <ion-list>
+      <ion-item menu-close="">Item 1</ion-item>
+      <ion-item menu-close="">Item 2</ion-item>
+      <ion-item menu-close="">Item 3</ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>

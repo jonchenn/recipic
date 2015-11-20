@@ -20,3 +20,19 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+.brand {
+  font-size: 3em;
+  text-align: center;
+}
+
+.result {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.profile-pic {
+  width: 100%;
+}

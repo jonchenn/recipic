@@ -1,0 +1,10 @@
+{
+  "name": "parse-sdk",
+  "version": "1.4.2",
+  "main": "lib/parse.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

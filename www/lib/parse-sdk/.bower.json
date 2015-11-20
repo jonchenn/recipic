@@ -1,0 +1,21 @@
+{
+  "name": "parse-sdk",
+  "version": "1.4.2",
+  "main": "lib/parse.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "homepage": "https://github.com/unparse/parse-js-sdk",
+  "_release": "1.4.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.2",
+    "commit": "dd6168e7400647dfba08f5432ba43ea407ca4360"
+  },
+  "_source": "git://github.com/unparse/parse-js-sdk.git",
+  "_target": "~1.4.2",
+  "_originalSource": "parse-sdk",
+  "_direct": true
+}
