@@ -15,11 +15,9 @@
       </label>
     </form>
 
-    <div class="image" back-img="{{imageSrc}}">
-      <i class="icon ion-image" ng-show="recipe.image != null"></i>
-    </div>
-
-    <img class="pic" ng-src="{{imageSrc}}" />
+    <span class="input-label">Picture</span>
+    
+    <img class="pic" ng-src="{{imageData}}" />
 
     <button class="button button-stable button-block  icon-left ion-android-camera"
       ng-click="takePicture()">

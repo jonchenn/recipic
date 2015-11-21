@@ -13,7 +13,8 @@
     <div class="list card" ng-repeat="recipe in recipes">
       <div class="item item-body recipe-wrap">
         <div class="image" back-img="{{recipe.image}}">
-          <i class="icon ion-image" ng-show="recipe.image != null"></i>
+          <i class="icon ion-image" ng-show="recipe.image == ''"></i>
+          &nbsp;
         </div>
         <div class="body">
           <div class="title">{{recipe.title}}</div>
