@@ -3,8 +3,6 @@ angular.module('app.controllers', [])
 // Login page controller
 .controller('loginCtrl', function($scope, $state) {
   $scope.login = function(username, password) {
-    console.log(username, password);
-
     Parse.User.logIn(username, password, {
       success: function(user) {
         // Do stuff after successful login.
@@ -15,7 +13,6 @@ angular.module('app.controllers', [])
         $scope.result = 'Unable to login';
       }
     });
-
   }
 })
 
@@ -45,16 +42,23 @@ angular.module('app.controllers', [])
     // offset
     query.limit(ITEMS_PER_PAGE);
     query.skip($scope.offset);
+    query.include('user');
 
     query.find().then(function(models) {
       $scope.offset += ITEMS_PER_PAGE;
 
       for (var i=0, length=models.length; i<length; i++) {
+        var user = models[i].get('user');
+        var image = models[i].get('image');
+
         $scope.recipes.push({
           title: models[i].get('title'),
           content: models[i].get('content'),
+          username: (user ? user.get('username') : ''),
+          image: (image ? image.url() : ''),
         });
       }
+
       $scope.$broadcast('scroll.refreshComplete');
       $scope.$broadcast('scroll.infiniteScrollComplete');
 
@@ -68,50 +72,43 @@ angular.module('app.controllers', [])
 })
 
 // Create new recipe controller
-.controller('createNewRecipeCtrl', function($scope, $state) {
-  document.addEventListener("deviceready", function () {
-    $scope.takePicture = function() {
-      var options = {
-        quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.CAMERA,
-        allowEdit: true,
-        encodingType: Camera.EncodingType.JPEG,
-        targetWidth: 100,
-        targetHeight: 100,
-        popoverOptions: CameraPopoverOptions,
-        saveToPhotoAlbum: false,
-        correctOrientation:true
-      };
+.controller('createNewRecipeCtrl', function($scope, $state, Camera) {
+  $scope.takePicture = function() {
+    Camera.getPicture({
+      quality: 75,
+      targetWidth: 800,
+      targetHeight: 300,
+      saveToPhotoAlbum: false,
+      destinationType: 0, //Camera.DestinationType.DATA_URL,
 
-      $cordovaCamera.getPicture(options).then(function(imageData) {
-        // var image = document.getElementById('myImage');
-        var src = "data:image/jpeg;base64," + imageData;
-        $scope.imageSrc = src;
-        //
-        // // Save to Parse.com
-        // var file = new Parse.File("myfile.txt", imageData);
+    }).then(function(imageData) {
+      console.log(imageData);
+      $scope.imageData = "data:image/jpeg;base64," + imageData;
 
-      }, function(err) {
-        // error
-      });
-    }
-  });
+    }, function(err) {
+      console.error(err);
+    });
+  };
 
   $scope.save = function(title, content) {
-    console.log('saving');
-
     var Recipe = Parse.Object.extend("Recipe");
     var newRecipe = new Recipe();
 
     newRecipe.set('title', title);
     newRecipe.set('content', content);
+    newRecipe.set('user', Parse.User.current());
+
+    var file = new Parse.File(
+      'receipe-'+newRecipe.get('objectId')+'.jpg',
+      { base64: $scope.imageData });
+
+    newRecipe.set('image', file);
 
     if (!title || !content) {
       return;
     }
 
-    newRecipe.save().then(function() {
+    newRecipe.save().then(function(savedModel) {
       // Save successfully, go back to feed.
       $state.go('menu.recipeFeed');
 
@@ -128,3 +125,5 @@ angular.module('app.controllers', [])
   $scope.username = userModel.get('username');
   $scope.img = userModel.get('img');
 })
+
+;

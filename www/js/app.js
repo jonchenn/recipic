@@ -7,6 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('app', [
   'ionic',
+  'ionic.service.core',
+  'ionic.service.analytics',
   'parse-angular',
   'parse-angular.enhance',
   'app.controllers',
@@ -15,8 +17,11 @@ angular.module('app', [
   'app.directives',
 ])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $ionicAnalytics) {
   $ionicPlatform.ready(function() {
+    // Analytics
+    $ionicAnalytics.register();
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {

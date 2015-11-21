@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
 
-    <style>
-      .angular-google-map-container {
-          width: 100%;
-          height: 504px;
-      }
-    </style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
 
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/parse-angular-patch/dist/parse-angular.js"></script>
-    <script src="lib/parse-sdk/lib/parse.js"></script>
+  <style>
+    .angular-google-map-container {
+      width: 100%;
+      height: 504px;
+    }
+  </style>
 
-    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+  <script src="lib/parse-angular-patch/dist/parse-angular.js"></script>
+  <script src="lib/parse-sdk/lib/parse.js"></script>
 
-    <!-- compiled css output -->
-    <link href="css/ionic.app.css" rel="stylesheet">
+  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
 
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/routes.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/directives.js"></script>
+  <!-- compiled css output -->
+  <link href="css/ionic.app.css" rel="stylesheet">
 
-  </head>
-  <body ng-app="app" animation="slide-left-right-ios7">
+  <!-- cordova script (this will be a 404 during development) -->
+  <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+  <!-- <script src="cordova.js"></script> -->
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
+
+</head>
+
+<body ng-app="app" animation="slide-left-right-ios7">
   <div>
     <div>
-        <ion-nav-bar class="bar-stable">
-            <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back</ion-nav-back-button>
-        </ion-nav-bar>
-        <ion-nav-view></ion-nav-view>
+      <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back</ion-nav-back-button>
+        <button class="button icon-left ion-plus" ng-click="doSomething()">
+        </button>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
     </div>
-</div>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -37,15 +37,33 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   width: 100%;
 }
 
+.recipe-pic {
+  width: 100%;
+}
+
 .page-new-recipe {
   .content {
     height: 80px;
   }
+
+  .pic {
+    width: 100%;
+  }
 }
 
 .page-feed {
+  .title {
+    font-size: 1.5em;
+    padding: 10px;
+  }
+
   .content {
     color: #555;
     padding: 15px 5px;
+  }
+
+  .username {
+    color: #2185C5;
+    padding: 10px 0;
   }
 }

@@ -7,9 +7,9 @@
         <input type="text" placeholder="" ng-model="title">
       </label>
     </form>
-    <img ng-src="{{imageSrc}}" />
+    <img class="pic" ng-src="{{imageData}}" />
     <button class="button button-stable button-block  icon-left ion-android-camera"
-      ng-click="takePicture">
+      ng-click="takePicture()">
       Take a Picture</button>
     <form class="list">
       <label class="item item-input">

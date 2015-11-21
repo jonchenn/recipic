@@ -6,10 +6,12 @@
     </ion-refresher>
 
     <div class="list card" ng-repeat="recipe in recipes">
-      <div class="item item-divider">{{recipe.title}}</div>
+      <div class="item item-divider title">{{recipe.title}}</div>
       <div class="item item-body">
-        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-          <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        <div class="username">{{recipe.username}}@</div>
+        <div style="">
+          <img class="recipe-pic" ng-src="{{recipe.image}}" />
+          <!-- <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i> -->
         </div>
         <div class="content">
           {{recipe.content}}

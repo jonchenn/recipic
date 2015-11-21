@@ -9102,9 +9102,23 @@ a.button {
 .profile-pic {
   width: 100%; }
 
+.recipe-pic {
+  width: 100%; }
+
 .page-new-recipe .content {
   height: 80px; }
+
+.page-new-recipe .pic {
+  width: 100%; }
+
+.page-feed .title {
+  font-size: 1.5em;
+  padding: 10px; }
 
 .page-feed .content {
   color: #555;
   padding: 15px 5px; }
+
+.page-feed .username {
+  color: #2185C5;
+  padding: 10px 0; }

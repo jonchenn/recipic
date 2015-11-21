@@ -1,6 +1,6 @@
 {
   "name": "recipic",
-  "app_id": "",
+  "app_id": "f37ee48d",
   "gulpStartupTasks": [
     "sass",
     "watch"
