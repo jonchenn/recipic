@@ -2,21 +2,28 @@
   <ion-content padding="'true'" class="has-header page-new-recipe">
     <form class="list"></form>
     <form class="list">
+      <span class="input-label">Title</span>
       <label class="item item-input">
-        <span class="input-label">Title</span>
         <input type="text" placeholder="" ng-model="title">
       </label>
     </form>
-    <img class="pic" ng-src="{{imageData}}" />
-    <button class="button button-stable button-block  icon-left ion-android-camera"
-      ng-click="takePicture()">
-      Take a Picture</button>
+
     <form class="list">
+      <span class="input-label">Content</span>
       <label class="item item-input">
-        <span class="input-label">Content</span>
         <textarea class="content" placeholder="" ng-model="content"> </textarea>
       </label>
     </form>
+
+    <div class="image" back-img="{{imageSrc}}">
+      <i class="icon ion-image" ng-show="recipe.image != null"></i>
+    </div>
+
+    <img class="pic" ng-src="{{imageSrc}}" />
+
+    <button class="button button-stable button-block  icon-left ion-android-camera"
+      ng-click="takePicture()">
+      Take a Picture</button>
 
     <button class="button button-positive button-block " ng-click="save(title, content)">Create</button>
   </ion-content>

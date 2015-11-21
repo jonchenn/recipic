@@ -56,6 +56,7 @@ angular.module('app.controllers', [])
           content: models[i].get('content'),
           username: (user ? user.get('username') : ''),
           image: (image ? image.url() : ''),
+          time: moment(models[i].get('createdAt')).fromNow(),
         });
       }
 

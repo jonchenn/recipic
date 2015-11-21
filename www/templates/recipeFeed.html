@@ -1,4 +1,9 @@
-<ion-view title="Recipe Feed">
+<ion-view title="Recipes">
+  <ion-nav-buttons side="right">
+    <button class="button icon-left ion-plus" ui-sref="menu.createNewRecipe">
+    </button>
+  </ion-nav-buttons>
+
   <ion-content padding="'true'" class="has-header page-feed">
     <ion-refresher
       pulling-text="Pull to refresh..."
@@ -6,17 +11,25 @@
     </ion-refresher>
 
     <div class="list card" ng-repeat="recipe in recipes">
-      <div class="item item-divider title">{{recipe.title}}</div>
-      <div class="item item-body">
-        <div class="username">{{recipe.username}}@</div>
-        <div style="">
-          <img class="recipe-pic" ng-src="{{recipe.image}}" />
-          <!-- <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i> -->
+      <div class="item item-body recipe-wrap">
+        <div class="image" back-img="{{recipe.image}}">
+          <i class="icon ion-image" ng-show="recipe.image != null"></i>
         </div>
-        <div class="content">
-          {{recipe.content}}
+        <div class="body">
+          <div class="title">{{recipe.title}}</div>
+          <div class="subtitle">
+            <span class="username">{{recipe.username}}@</span>
+            <span class="time">{{recipe.time}}</span>
+          </div>
+          <div class="content">
+            {{recipe.content}}
+          </div>
         </div>
-        <button class="button button-stable button-block  icon-left ion-heart">Like</button>
+        <div class="buttons row">
+          <a class="link-button button-stable button-block ion-heart"> Like</a>
+          <a class="link-button button-stable button-block ion-chatbubbles"> Comment</a>
+          <a class="link-button button-stable button-block ion-share"> Share</a>
+        </div>
       </div>
     </div>
 

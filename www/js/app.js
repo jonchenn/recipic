@@ -17,6 +17,8 @@ angular.module('app', [
   'app.directives',
 ])
 
+.constant('_', window._)
+
 .run(function($ionicPlatform, $ionicAnalytics) {
   $ionicPlatform.ready(function() {
     // Analytics

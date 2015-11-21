@@ -42,6 +42,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .page-new-recipe {
+  background: #E5E4E1 !important;
+
+  .image {
+    text-align: center;
+    line-height: 250px;
+    background: #eee;
+
+    i {
+      color: rgba(0, 0, 0, 0.2);
+      font-size: 3em;
+      vertical-align: middle;
+    }
+  }
+
   .content {
     height: 80px;
   }
@@ -49,21 +63,148 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   .pic {
     width: 100%;
   }
+
+  .item {
+    padding: 0 !important;
+  }
+
+  .input-label {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 1.2em;
+  }
+
+  form {
+    margin-bottom: 10px;
+  }
+
+  input, textarea {
+    color: #555;
+    font-size: 1.2em;
+    padding: 10px !important;
+    line-height: 1.2em;
+  }
 }
 
 .page-feed {
+  background: #E5E4E1 !important;
+
+  .item {
+    padding: 0 !important;
+  }
+}
+
+.recipe-wrap {
+  .body {
+    padding: 15px;
+    overflow: auto;
+
+    .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      padding-bottom: 2px;
+      color: #3E454C;
+      padding: 5px 0;
+      display: block;
+    }
+
+    .content {
+      color: #999;
+      padding: 10px 0;
+    }
+
+    .subtitle {
+
+    }
+
+    .username {
+      color: #FF7F66;
+      font-weight: bold;
+      padding: 5px 0;
+    }
+
+    .time {
+      color: #999;
+      font-size: 0.8em;
+      padding: 5px 0;
+    }
+  }
+
+
+  .image {
+    text-align: center;
+    line-height: 250px;
+    background: #eee;
+
+    i {
+      color: rgba(0, 0, 0, 0.2);
+      font-size: 3em;
+      vertical-align: middle;
+    }
+  }
+
+  .buttons {
+    margin: 0 !important;
+    background: #FF7F66 !important;
+    overflow: auto;
+
+    .link-button {
+      background: none !important;
+      border: none !important;
+      padding: 5px !important;
+      margin: 5px !important;
+      margin-right: 20px !important;
+      color: #fff !important;
+      font-weight: bold;
+      font-size: 0.9em;
+      text-align: left;
+      float: left;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+
+.bar-header {
+  color: #fff !important;
+  background: #3E454C !important;
+
+  button {
+    color: #fff !important;
+    background: #3E454C !important;
+    border: none !important;
+  }
+
   .title {
-    font-size: 1.5em;
-    padding: 10px;
+    color: #fff !important;
   }
+}
 
-  .content {
-    color: #555;
-    padding: 15px 5px;
-  }
+.menu-left .bar-header {
+  background: #2C3136 !important;
+}
 
-  .username {
-    color: #2185C5;
-    padding: 10px 0;
+.side-menu-left {
+
+  background: #2C3136 !important;
+
+  .item, .item-content {
+    color: #fff !important;
+    background: #2C3136 !important;
+    border: none !important;
   }
+}
+
+.button-stable {
+  color: #fff !important;
+  border: none !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.button-positive {
+  color: #fff !important;
+  border: none !important;
+  background: #FF7F66 !important;
 }
