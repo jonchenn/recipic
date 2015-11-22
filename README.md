@@ -40,7 +40,7 @@ ionic serve
 
 * Run in iOS
 ```
-ionic run --
+ionic run --device ios
 ```
 
 * Run in Android
