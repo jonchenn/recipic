@@ -6,13 +6,14 @@ Recipic - an Instagram-like recipe sharing app. This is designed for [Dosudo](ht
 
 ### Parse
 
-* Create a new table called "Recipe" with following columns
-** title (string)
-** content (string)
-** image (file)
-** user (pointer to User table)
+Create a new table called "Recipe" with following columns:
 
-* Copy your Parse App ID and JS Key into app.js
+* title (string)
+* content (string)
+* image (file)
+* user (pointer to User table)
+
+Then copy your Parse App ID and JS Key into app.js
 
 ### Ionic
 
