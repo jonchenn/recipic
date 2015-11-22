@@ -4,7 +4,7 @@ Recipic - an Instagram-like recipe sharing app. This is designed for Dosudo live
 
 ## Setup
 
-### Parse Table
+### Parse
 
 * Create a new table called "Recipe" with following columns
 ** title (string)
@@ -13,3 +13,11 @@ Recipic - an Instagram-like recipe sharing app. This is designed for Dosudo live
 ** user (pointer to User table)
 
 * Copy your Parse App ID and JS Key into app.js
+
+## Run
+
+* Clone this repository
+
+```
+git clone 
+```
