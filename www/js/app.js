@@ -36,8 +36,8 @@ angular.module('app', [
 
     // Initialize Parse
     Parse.initialize(
-      "ReYi6pSGB8FiAahrk9D26RqkxOi0Hm0k3gCCcyqq" /* App ID */ ,
-      "GpdqMKNUnaNzU9GUQcdd1BASqmnGtIG66y2VQZr9" /* JS key */
+      "Parse App ID" /* App ID */ ,
+      "Parse JS Key" /* JS key */
     );
     // Migrating to new session tokens, see https://parse.com/tutorials/session-migration-tutorial.
     Parse.User.enableRevocableSession();
