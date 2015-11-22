@@ -1,6 +1,6 @@
 # recipic
 
-Recipic - an Instagram-like recipe sharing app. This is designed for Dosudo live coding demo.
+Recipic - an Instagram-like recipe sharing app. This is designed for [Dosudo](https://www.facebook.com/groups/dosudo/) live coding demo.
 
 ## Setup
 
