@@ -30,6 +30,12 @@ ionic lib update
 git clone https://github.com/jonchenn/recipic.git
 ```
 
+### Install libraries/packages
+
+```
+bower install
+```
+
 ## Run in browser
 In the project folder, run:
 
